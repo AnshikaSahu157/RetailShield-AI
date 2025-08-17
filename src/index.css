@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* RetailShield AI Security Platform Theme */
+
+@layer base {
+  :root {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Security theme colors */
+    --threat-high: 0 84% 60%;
+    --threat-medium: 38 92% 50%;
+    --threat-low: 142 76% 36%;
+    --safe: 142 76% 36%;
+    --warning: 38 92% 50%;
+  }
+
+  body {
+   @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+/* Pulse animation for live updates */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Security status indicators */
+.status-safe { color: hsl(var(--safe)); }
+.status-warning { color: hsl(var(--warning)); }
+.status-threat { color: hsl(var(--threat-high)); }
+
+.bg-status-safe { background-color: hsl(var(--safe) / 0.1); }
+.bg-status-warning { background-color: hsl(var(--warning) / 0.1); }
+.bg-status-threat { background-color: hsl(var(--threat-high) / 0.1); }
